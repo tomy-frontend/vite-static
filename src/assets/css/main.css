@@ -1,0 +1,51 @@
+:root {
+  /* variable-font */
+  --font-variable-minViewportPx-default: 360;
+  --font-variable-maxViewportPx-default: 1000;
+  --font-variable-remBase: 16;
+
+  /* color */
+  --primary: #a3a3a3;
+  --secondary: #393939;
+  --black: #393939;
+  --white: #fff;
+
+  /* font */
+  --ff-base: sans-serif;
+  --fz-base: 1rem;
+  --lh-base: normal;
+  --fw-base: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /* spacing */
+  --spacing-unit: 8px;
+  --spacing-small: calc(var(--spacing-unit) * 2);
+  --spacing-medium: calc(var(--spacing-unit) * 4);
+  --spacing-large: calc(var(--spacing-unit) * 8);
+}
+
+body {
+  font-family: var(--ff-base);
+  font-size: var(--fz-base);
+  font-weight: var(--fw-base);
+  line-height: var(--lh-base);
+  color: var(--black);
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* Utility classes */
+.mt-small {
+  margin-top: var(--spacing-small);
+}
+.mt-medium {
+  margin-top: var(--spacing-medium);
+}
+.mt-large {
+  margin-top: var(--spacing-large);
+}
