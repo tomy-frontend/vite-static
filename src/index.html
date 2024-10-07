@@ -11,7 +11,51 @@
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
   <body>
-    <header>header</header>
+    <header class="header">
+      <nav class="gnav" aria-label="グローバルメニュー">
+        <h1 class="gnav__logo">LOGO</h1>
+        <ul class="gnav__list">
+          <li class="gnav__item"><a href="" class="gnav__link">アイテム</a></li>
+          <li class="gnav__item"><a href="" class="gnav__link">アイテム</a></li>
+          <li class="gnav__item"><a href="" class="gnav__link">アイテム</a></li>
+        </ul>
+
+        <!-- ドロワーメニューボタン -->
+        <button
+          is="js-drawer-button"
+          class="drawer__button"
+          type="button"
+          aria-label="メニューを開く"
+          aria-controls="navigation"
+          aria-expanded="false"
+        >
+          <span class="drawer__bar"></span>
+        </button>
+        <!-- ドロワーメニューボタン -->
+      </nav>
+    </header>
+
+    <!-- ドロワーメニュー -->
+    <nav
+      id="navigation"
+      class="drawer__nav"
+      aria-label="ドロワーメニュー"
+      inert
+    >
+      <ul class="drawer__list">
+        <li class="drawer__item">
+          <a href="" class="drawer__link">ドロワーメニュー</a>
+        </li>
+        <li class="drawer__item">
+          <a href="" class="drawer__link">ドロワーメニュー</a>
+        </li>
+        <li class="drawer__item">
+          <a href="" class="drawer__link">ドロワーメニュー</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- ドロワーメニュー -->
+
     <main>main</main>
     <footer>footer</footer>
     <script type="module" src="./assets/js/main.js"></script>

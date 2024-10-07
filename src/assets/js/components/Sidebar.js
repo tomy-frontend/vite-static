@@ -1,1 +1,3 @@
-console.log("this is Sidebar");
+export function toggleSidebar() {
+  console.log("this is Sidebar");
+}

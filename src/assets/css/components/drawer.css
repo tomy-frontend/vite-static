@@ -1,0 +1,98 @@
+/* drawer__button */
+.drawer__button {
+  --bar-width: 30px;
+  --bar-height: 2px;
+  --bar-color: #333;
+
+  width: var(--bar-width);
+  height: 20px;
+  display: grid;
+  place-content: center;
+  background: inherit;
+  z-index: 999;
+  cursor: pointer;
+
+  /* 位置調整 */
+  justify-self: end;
+}
+
+.drawer__bar {
+  position: relative;
+  display: block;
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background: var(--bar-color);
+  transition: background 0.3s;
+}
+
+.drawer__bar:before,
+.drawer__bar:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: var(--bar-height);
+  background: var(--bar-color);
+  transition: transform 0.3s;
+}
+
+.drawer__bar:before {
+  transform: translateY(-8px);
+}
+
+.drawer__bar:after {
+  transform: translateY(8px);
+}
+
+.drawer__button[aria-expanded="true"] .drawer__bar:before {
+  transform: rotate(45deg);
+}
+
+.drawer__button[aria-expanded="true"] .drawer__bar {
+  background: transparent;
+}
+
+.drawer__button[aria-expanded="true"] .drawer__bar:after {
+  transform: rotate(-45deg);
+}
+
+/* drawer__nav */
+.drawer__nav {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  background: gray;
+  width: 100dvw;
+  height: 100dvh;
+  color: white;
+  overflow-y: auto;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: visibility 0.3s, opacity 0.3s;
+  z-index: 998;
+}
+
+.drawer__nav.is-active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer__list {
+  display: grid;
+  gap: 2em;
+}
+
+.drawer__link {
+  color: white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer__bar,
+  .drawer__bar:before,
+  .drawer__bar:after,
+  .drawer__nav {
+    transition: none;
+  }
+}

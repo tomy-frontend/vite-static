@@ -1,3 +1,5 @@
+@import url("components/drawer.css");
+
 :root {
   /* variable-font */
   --font-variable-minViewportPx-default: 360;
@@ -48,4 +50,39 @@ a {
 }
 .mt-large {
   margin-top: var(--spacing-large);
+}
+
+.header {
+  width: 100%;
+  background: var(--primary);
+  color: var(--white);
+  padding-block: 16px;
+}
+
+.gnav {
+  --padding-inline: 16px;
+  --max-contents-width: 1200px;
+
+  width: min(calc(100% - var(--padding-inline) * 2), var(--max-contents-width));
+  margin-inline: auto;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.gnav__logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.gnav__list {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1em;
+  justify-self: center;
+}
+
+.gnav__link {
+  font-size: 1rem;
+  color: white;
 }

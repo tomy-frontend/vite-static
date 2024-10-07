@@ -1,10 +1,18 @@
-import "./components/Sidebar";
-import "./components/drawer";
-import "./components/Animation";
+import { toggleSidebar } from "./components/sidebar.js";
+import { initDrawerMenu } from "./components/drawer.js";
+import { initializeAnimations } from "./components/animation.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  adjustViewport();
+  initializeAnimations();
+  initDrawerMenu();
+  toggleSidebar();
+});
 
 //360px未満は表示倍率を変更
-!(function () {
+export function adjustViewport() {
   const viewport = document.querySelector('meta[name="viewport"]');
+
   function switchViewport() {
     const value =
       window.outerWidth > 360
@@ -14,6 +22,11 @@ import "./components/Animation";
       viewport.setAttribute("content", value);
     }
   }
-  addEventListener("resize", switchViewport, false);
+
+  window.addEventListener("resize", switchViewport);
   switchViewport();
-})();
+
+  return () => {
+    window.removeEventListener("resize", switchViewport);
+  };
+}
